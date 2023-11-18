@@ -117,8 +117,8 @@ Making a histgram for the drinker column allowed us to see that we have a close 
 * What is your baseline evaluation setup? Why? 
 Our baseline evaluation setup is currently checking the accuracy and using a confusion matrix. This will tell us how many false positives and false negeative we have, which will allow us to make changes
 to alleviate the error.
-* Describe the ML methods that you consider using and what is the reason for their choice?
-<br />We will try XGboost because our benchmark is using it. We will try out logistic regression because we are trying to predict something that is binary (Yes or No). We will also try out
+* Describe the ML methods that you consider using and what is the reason for their choice?  
+We will try XGboost because our benchmark is using it. We will try out logistic regression because we are trying to predict something that is binary (Yes or No). We will also try out
 an SVM model to compete with the other two.
 We plan to compare the two models and try to get a better score than the becnhmark. 
    * What is the family of machine learning algorithms you are using and why?
