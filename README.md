@@ -38,7 +38,7 @@ to improve the accuracy. We will also try out other Machine learning models to r
 The data comes from this [link](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset/data). It is a dataset that holds body signals and if an indiviudal has smoked or drank in the past. The DRK_YN (Our targte column) is either a Y or N. We decided to make that column binary (0 or 1). The rest of the dataset consists of data and measurements collected for an individual. For example, an individual's height, weight, and age is recored. It also holds the value for their cholesterol and hemoglobin levels. We plan to use a form of cross validation on our data to reduce noise, bias, and variance.
 * What do you hope to achieve?
 Our goal is to acheive a higher accuracy score than our benchmark. We having already tried normalizing our data with minmax, but it only lowered our accuracy score.
-Using only specific columns with high correlation also resulted in an accurcy score lower than 74%.
+Using only specific columns with high correlation also resulted in an accuracy score lower than 74%.
 
 <Finalize for the *Project Submission* assignment submission> 
 
