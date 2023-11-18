@@ -82,7 +82,9 @@ Histograms to view dataset distribution.
 Pair plot to visualize relationships between features.
 Correlation matrix heatmap to visualize strength of relationship between features.
 
-* Why? - Add figures if any
+* Why? - We used pair plot and correlation to figure out what columns we might look at. When experimenting we didn't see a postive effect when trying to train using only certain rows.
+We may look to using a dimensionality reduction algorithm to improve results. Histograms allowed us to see the range of values for the age, sex, and drinker. 
+Making a histgram for the drinker column allowed us to see that we have a close number of Yes's and No's. Having too much of one prediction would skew results.
 
 <Expand and complete for the **Project Submission**>
 * Describe the methods you explored (usually algorithms, or data wrangling approaches). 
@@ -93,8 +95,11 @@ Correlation matrix heatmap to visualize strength of relationship between feature
 
 <Complete for *Project Progress*>
 * Have you considered Dimensionality Reduction or Scaling? 
-  * If yes, include steps here.  
+  * If yes, include steps here.
+  We tried out minmax and it didn't improve the results immediately. We will try to normalize the data differently to get better results.  
 * What did you consider but *not* use? Why? 
+  We considered using a dimensionality reduction like PCA, but we want to try out scaling the data first and seeing the results. We plan on experimenting
+  with PCA or TSNE. 
 
 <Expand and complete for **Project Submission**>
 
@@ -104,8 +109,15 @@ Correlation matrix heatmap to visualize strength of relationship between feature
 <Complete for **Project Progress**>
 
 * What is your baseline evaluation setup? Why? 
-* Describe the ML methods that you consider using and what is the reason for their choice? 
+Are baseline evaluation setup is currently checking the accuracy and using a confusion matrix. This will tell us how many false positives and false negeative we have, which will allow us to make changes
+to alleviate the error.
+* Describe the ML methods that you consider using and what is the reason for their choice?
+We will try XGboost because our benchmark is using it. We will try out logistic regression because we are trying to predict something that is binary (Yes or No). We will also try out
+an SVM model to compete with the other two.
+We plan to compare the two models and try to get a better score than the becnhmark. 
    * What is the family of machine learning algorithms you are using and why?
+   We are using models form the decision tree family because we beleive that certain feature decsions could lead to accurate prediction. We are using logistic regression whihc is a part of the linear
+   regression tree. logistic regression can be used for binary predictions. We will also try out a model from the SVM family, so we can compare the results to ther other models.
 
 <Expand and complete for **Project Submission**>
 
@@ -120,6 +132,7 @@ Correlation matrix heatmap to visualize strength of relationship between feature
 ## Experiments 
 
 < **Project Progress** should include experiments you have completed thus far.>
+* We tried XGBoost on the dataset when it was normalized and we tried to pick columns that had higher correlations. We were not able to get a score higher than our benchmark score 74% accuracy.
 
 <**Project Submission** should only contain final version of the experiments. Please use visualizations whenever possible.>
 * Describe how did you evaluate your solution 
