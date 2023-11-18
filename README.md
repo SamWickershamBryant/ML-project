@@ -29,7 +29,7 @@ A person can be classified as a drinker based on information gathered from biome
 We, as a group, are going to use the dataset to train a model to predict if a person is a drinker or not.
 
 <Expand the section with few sentences for the *Project Progress* assignment submission> 
-* Give a clear and complete statement of the problem.
+* Using Body Signals, can a model be created that can predict if a person used to be a drinker or not.
 * What is the benchmark you are using.  Why?  
 * Where does the data come from, what are its characteristics? Include informal success measures (e.g. accuracy on cross-validated data, without specifying ROC or precision/recall etc) that you planned to use. 
 * What do you hope to achieve?>
@@ -43,7 +43,31 @@ We, as a group, are going to use the dataset to train a model to predict if a pe
 Our dataset is called Smoking and Drinking Dataset with Body Signals. It provides data on an individual's body to predict if they are a drinker (Yes or No) or if they are a smoker(1: Never Smoked, 2: Used to Smoke, 3: Still Smokes). There are 991356 instances and 24 columns in our dataset. 
 
 <Complete the following for the **Project Progress**>
-* Description of the dataset (dimensions, names of variables with their description) If in doubt, use 3.1-3.3. [Datasheets For Datasets](https://arxiv.org/abs/1803.09010) as a guideline.  
+* The dimensions of this dataset is 991346 X 24. There are 24 columns, including the target columns smoker and drinker. 
+* 1. Sex: Is an indivudal male or female (1 or 0).
+* 2. Age: What is the age of the individual.
+* 3. height: The height of an indivuald in meters and centimeters.
+* 4. weight: An individual's weight.
+* 5. waistline: An individual's waistline measurements. 
+* 6. sight_left: Does the individual have left sided sight.
+* 7. sight_right: Does the individual have right sided sight.
+* 8. hear_left: Does an individual have left sided hearing.
+* 9. hear_right: Does an individual have right sided hearing.
+* 10. SBP: The Systolic blood pressure.
+* 11. DBP: An individual's Diastolic blood pressure[mmHg].
+* 12. BLDS: An individual's fasting blood glucose[mg/dL].
+* 13. tot_chole: An individual's total cholesterol[mg/dL].
+* 14. HDL_chole: An individual's HDL (high-density lipoprotein) cholesterol.
+* 15. LDL_chole: An individual's  LDL(low-density lipoproteins) cholesterol.
+* 16. triglyceride: An individual's triglyceride[mg/dL].
+* 17. hemoglobin: An individual's hemoglobin[g/dL].
+* 18. urine_protein: An individual's type of protein in their urine  1(-), 2(+/-), 3(+1), 4(+2), 5(+3), 6(+4).
+* 19. serum_creatinine: An individual's  serum(blood) creatinine[mg/dL] levels.
+* 20. SGOT_AST: SGOT(Glutamate-oxaloacetate transaminase) AST(Aspartate transaminase)[IU/L].
+* 21. SGOT_ALT: ALT(Alanine transaminase)[IU/L].
+* 22. gamma_GTP: y-glutamyl transpeptidase[IU/L].
+* 23. SMK_stat_type_cd: Smoking state, 1(never), 2(used to smoke but quit), 3(still smoke).
+* 24. DRK_YN: Drinker or Not.
 * If you are using benchmarks, describe the data in details. If you are collecting data, describe why, how, data format, volume, labeling, etc.>
 
 <Expand and complete for *Project Submission*>
