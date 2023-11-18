@@ -31,13 +31,13 @@ We, as a group, are going to use the dataset to train a model to predict if a pe
 <Expand the section with few sentences for the *Project Progress* assignment submission> 
 * Using Body Signals, can a model be created that can predict if a person used to be a drinker or not.
 * What is the benchmark you are using.  Why?
-We are using this code as our benchmark [code](https://www.kaggle.com/code/raman209/prediction-of-drinkers-using-body-signals) .
+\We are using this code as our benchmark [code](https://www.kaggle.com/code/raman209/prediction-of-drinkers-using-body-signals) .
 This code is very basic and it uses the XGBoost model to acheive accuracy. We are using this as our benchmark because we want to see if we can add features
 to improve the accuracy. We will also try out other Machine learning models to reach a higher accuracy. 
 * Where does the data come from, what are its characteristics? Include informal success measures (e.g. accuracy on cross-validated data, without specifying ROC or precision/recall etc) that you planned to use. 
-The data comes from this [link](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset/data). It is a dataset that holds body signals and if an indiviudal has smoked or drank in the past. The DRK_YN (Our targte column) is either a Y or N. We decided to make that column binary (0 or 1). The rest of the dataset consists of data and measurements collected for an individual. For example, an individual's height, weight, and age is recored. It also holds the value for their cholesterol and hemoglobin levels. We plan to use a form of cross validation on our data to reduce noise, bias, and variance.
+\The data comes from this [link](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset/data). It is a dataset that holds body signals and if an indiviudal has smoked or drank in the past. The DRK_YN (Our targte column) is either a Y or N. We decided to make that column binary (0 or 1). The rest of the dataset consists of data and measurements collected for an individual. For example, an individual's height, weight, and age is recored. It also holds the value for their cholesterol and hemoglobin levels. We plan to use a form of cross validation on our data to reduce noise, bias, and variance.
 * What do you hope to achieve?
-Our goal is to acheive a higher accuracy score than our benchmark. We having already tried normalizing our data with minmax, but it only lowered our accuracy score.
+\Our goal is to acheive a higher accuracy score than our benchmark. We having already tried normalizing our data with minmax, but it only lowered our accuracy score.
 Using only specific columns with high correlation also resulted in an accuracy score lower than 74%.
 
 <Finalize for the *Project Submission* assignment submission> 
@@ -84,12 +84,12 @@ Our dataset is called Smoking and Drinking Dataset with Body Signals. It provide
 
 <Complete for **Project Progress**>
 * What EDA graphs you are planning to use?
-Histograms to view dataset distribution.
+\Histograms to view dataset distribution.
 Pair plot to visualize relationships between features.
 Correlation matrix heatmap to visualize strength of relationship between features.
 
 * Why? - We used pair plot and correlation to figure out what columns we might look at. When experimenting we didn't see a postive effect when trying to train using only certain rows.
-We may look to using a dimensionality reduction algorithm to improve results. Histograms allowed us to see the range of values for the age, sex, and drinker. 
+\We may look to using a dimensionality reduction algorithm to improve results. Histograms allowed us to see the range of values for the age, sex, and drinker. 
 Making a histgram for the drinker column allowed us to see that we have a close number of Yes's and No's. Having too much of one prediction would skew results.
 
 <Expand and complete for the **Project Submission**>
@@ -102,9 +102,9 @@ Making a histgram for the drinker column allowed us to see that we have a close 
 <Complete for *Project Progress*>
 * Have you considered Dimensionality Reduction or Scaling? 
   * If yes, include steps here.
-  We tried out minmax and it didn't improve the results immediately. We will try to normalize the data differently to get better results.  
+  \We tried out minmax and it didn't improve the results immediately. We will try to normalize the data differently to get better results.  
 * What did you consider but *not* use? Why? 
-  We considered using a dimensionality reduction like PCA, but we want to try out scaling the data first and seeing the results. We plan on experimenting
+  \We considered using a dimensionality reduction like PCA, but we want to try out scaling the data first and seeing the results. We plan on experimenting
   with PCA or TSNE. 
 
 <Expand and complete for **Project Submission**>
@@ -115,14 +115,14 @@ Making a histgram for the drinker column allowed us to see that we have a close 
 <Complete for **Project Progress**>
 
 * What is your baseline evaluation setup? Why? 
-Are baseline evaluation setup is currently checking the accuracy and using a confusion matrix. This will tell us how many false positives and false negeative we have, which will allow us to make changes
+Our baseline evaluation setup is currently checking the accuracy and using a confusion matrix. This will tell us how many false positives and false negeative we have, which will allow us to make changes
 to alleviate the error.
 * Describe the ML methods that you consider using and what is the reason for their choice?
-We will try XGboost because our benchmark is using it. We will try out logistic regression because we are trying to predict something that is binary (Yes or No). We will also try out
+\We will try XGboost because our benchmark is using it. We will try out logistic regression because we are trying to predict something that is binary (Yes or No). We will also try out
 an SVM model to compete with the other two.
 We plan to compare the two models and try to get a better score than the becnhmark. 
    * What is the family of machine learning algorithms you are using and why?
-   We are using models form the decision tree family because we beleive that certain feature decsions could lead to accurate prediction. We are using logistic regression whihc is a part of the linear
+   \We are using models form the decision tree family because we beleive that certain feature decsions could lead to accurate prediction. We are using logistic regression whihc is a part of the linear
    regression tree. logistic regression can be used for binary predictions. We will also try out a model from the SVM family, so we can compare the results to ther other models.
 
 <Expand and complete for **Project Submission**>
