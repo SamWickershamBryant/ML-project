@@ -30,9 +30,15 @@ We, as a group, are going to use the dataset to train a model to predict if a pe
 
 <Expand the section with few sentences for the *Project Progress* assignment submission> 
 * Using Body Signals, can a model be created that can predict if a person used to be a drinker or not.
-* What is the benchmark you are using.  Why?  
+* What is the benchmark you are using.  Why?
+We are using this code as our benchmark. [code](https://www.kaggle.com/code/raman209/prediction-of-drinkers-using-body-signals) .
+This code is very basic and the XGBoost model to acheive accuracy. We are using this as our benchmark because we want to see if we can add features
+to improve the accuracy. We will also try out other Machine learning models to reach a higher accuracy. 
 * Where does the data come from, what are its characteristics? Include informal success measures (e.g. accuracy on cross-validated data, without specifying ROC or precision/recall etc) that you planned to use. 
-* What do you hope to achieve?>
+The data come from this [link](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset/data). It is a dataset that holds body signals and if an indiviudal has smoked or drank in the past.
+* What do you hope to achieve?
+Our goal is to acheive a higher accuracy score than our benchmark. We having already tried normalizing our data with minmax, but it only lowered our accuracy score.
+Using only specific columns with high correlation also resulted in an accurcy score lower than 74%.
 
 <Finalize for the *Project Submission* assignment submission> 
 
