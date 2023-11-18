@@ -74,7 +74,9 @@ Our dataset is called Smoking and Drinking Dataset with Body Signals. It provide
 * 22. gamma_GTP: y-glutamyl transpeptidase[IU/L].
 * 23. SMK_stat_type_cd: Smoking state, 1(never), 2(used to smoke but quit), 3(still smoke).
 * 24. DRK_YN: Drinker or Not.
+
 * If you are using benchmarks, describe the data in details. If you are collecting data, describe why, how, data format, volume, labeling, etc.>
+We are using a benchmarks to compare our score with online results. A basic XGBoost model was able to get an accuracy score of 74%. We will not be collecting data.
 
 <Expand and complete for *Project Submission*>
 
