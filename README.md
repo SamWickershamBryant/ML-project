@@ -12,7 +12,7 @@
 # SUBMISSION FORMAT FOR THE REPORTS
 
 #  <Title>
-**<Brian Robinson, Luiz Salazar, Sam Bryant>** 
+**<Brian Robinson, Sam Bryant>** 
 
 ## Project Summary
 
@@ -35,7 +35,7 @@ We are using this code as our benchmark [code](https://www.kaggle.com/code/raman
 This code is very basic and it uses the XGBoost model to acheive accuracy. We are using this as our benchmark because we want to see if we can add features
 to improve the accuracy. We will also try out other Machine learning models to reach a higher accuracy. 
 * Where does the data come from, what are its characteristics? Include informal success measures (e.g. accuracy on cross-validated data, without specifying ROC or precision/recall etc) that you planned to use. 
-The data comes from this [link](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset/data). It is a dataset that holds body signals and if an indiviudal has smoked or drank in the past. The DRK_YN (Our targte column) is either a Y or N. We decided to make that column binary (0 or 1). The rest of the dataset consists of data and measurements collected for an individual. For example, an individual's height, weight, and age is recored. It also holds the value for their cholesterol and hemoglobin levels. We plan to use a form of cross validation on our data to reduce noise, bias, and variance.
+The data comes from this [link](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset/data). The data was gathered in Korea from a National Health Insurance service. The dataset consists of body signals and if an indiviudal was a smoker or drinker. The DRK_YN (Our targte column) is either a Y or N. We decided to make that column binary (0 or 1). The rest of the dataset contains measurements collected for an individual. For example, an individual's height, weight, and age is recored. It also holds the value for their cholesterol and hemoglobin levels. We plan to use a form of cross validation on our data to reduce noise, bias, and variance. We can use this as an informal success measure.
 * What do you hope to achieve?
 Our goal is to acheive a higher accuracy score than our benchmark. We having already tried normalizing our data with minmax, but it only lowered our accuracy score.
 Using only specific columns with high correlation also resulted in an accuracy score lower than 74%.
@@ -76,7 +76,8 @@ Our dataset is called Smoking and Drinking Dataset with Body Signals. It provide
 * 24. DRK_YN: Drinker or Not.
 
 * If you are using benchmarks, describe the data in details. If you are collecting data, describe why, how, data format, volume, labeling, etc.>
-We are using a benchmarks to compare our score with online results. A basic XGBoost model was able to get an accuracy score of 74%. We will not be collecting data.
+We are using a benchmark to compare our score with. A basic XGBoost model was able to get an accuracy score of 74%. We plan to build off of this benchmark and add features to get a higher score.
+We will not be collecting data.
 
 <Expand and complete for *Project Submission*>
 
