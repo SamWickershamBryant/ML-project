@@ -11,7 +11,7 @@
 
 # SUBMISSION FORMAT FOR THE REPORTS
 
-#  <Title>
+#  Determine if someone is a drinker based on bady signals
 **<Brian Robinson, Sam Bryant>** 
 
 ## Project Summary
