@@ -1,17 +1,5 @@
-# Project Assignments 
 
-* [Project Proposal](https://canvas.txstate.edu/courses/2179554/assignments/31569710) 
-* [Project Progress](https://canvas.txstate.edu/courses/2179554/assignments/31569830)
-* [Project Submission](https://canvas.txstate.edu/courses/2179554/assignments/31569848)
-
- **Submission Format** 
- 
-1. Python code with markdown documentation, images saved in .jpg or .png format, and README.md as a project report OR
-2. Jupyter notebook (.ipynb) that contains full markdown sections as listed above 
-
-# SUBMISSION FORMAT FOR THE REPORTS
-
-#  Determine if someone is a drinker based on bady signals
+#  Predicting Whether A Person Is A Drinker Based On Body Signals
 **Brian Robinson, Sam Bryant** 
 
 ## Project Summary
