@@ -261,7 +261,7 @@ The dataset underwent several preprocessing steps to prepare it for analysis. Th
   - Our Model: ![Our Graph](https://i.imgur.com/x2kI3sO.png)
 
 **Error Analysis and Future Improvement Suggestions:**
-- **Error Analysis**: Our model failed at all of our experiments when trying to outperform the benchmark. When we tried PCA, it just hurt out model. When we tried hyperparameter tuning, it had no effect. The only thing that helped us was using standard scaling but this is to be expected when working with unnormalized data in classification tasks.
+- **Error Analysis**: Our model failed at all of our experiments when trying to outperform the benchmark. When we tried PCA, it just hurt our model. When we tried hyperparameter tuning, it had no effect. The only thing that helped us was using standard scaling but this is to be expected when working with unnormalized data in classification tasks.
 - **Improvement Suggestions**: We could improve our performance on learning this data by using different classification models we haven't tried, and by using more extensive hyperparameter tuning. The tuning we used in this project was very basic in order to save on computation time which is probably the reason it didn't improve anything. We could also explore alternative feature engineering techniques or additional data integration to help our model, but this is not guranteed as the dataset given is already very diverse and extensive.
 
 ## Conclusion
