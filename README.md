@@ -26,7 +26,7 @@ Can we, as a group outperform a benchmark model performance by using these machi
 
 
 We are using this [code](https://www.kaggle.com/code/raman209/prediction-of-drinkers-using-body-signals) as our benchmark  .
-This code is very basic and it uses the XGBoost model to acheive accuracy. We are using this as our benchmark because we want to see if we can add features
+This code is very basic and it uses the XGBoost model to achieve accuracy. We are using this as our benchmark because we want to see if we can add features
 to improve the accuracy. We will also try out other Machine learning models to reach a higher accuracy. 
 The data comes from this [link](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset/data). The data was gathered in Korea from a National Health Insurance service. The dataset consists of body signals and if an indiviudal was a smoker or drinker. The DRK_YN (Our targte column) is either a Y or N. We decided to make that column binary (0 or 1). The rest of the dataset contains measurements collected for an individual. For example, an individual's height, weight, and age is recored. It also holds the value for their cholesterol and hemoglobin levels. We plan to use a form of cross validation on our data to reduce noise, bias, and variance. We can use this as an informal success measure.
 
