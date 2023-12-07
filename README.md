@@ -82,10 +82,80 @@ We will not be collecting data.
 
 ### Data Processing
 
+Here's an example of how you could document the data processing steps you've described, using Markdown. This format includes placeholders for images of the code/output, which you can replace with actual images or links to images as needed.
 
-<Expand and complete for *Project Submission*>
+---
 
-* What Processing Tools have you used.  Why?  Add final images from jupyter notebook. Use questions from 3.4 of the [Datasheets For Datasets](https://arxiv.org/abs/1803.09010) paper for a guide.>  
+## Data Preprocessing Documentation
+
+### Preprocessing/Cleaning/Labeling of Data
+The dataset underwent several preprocessing steps to prepare it for analysis. These steps include:
+
+1. **Reading the Data**: The dataset, named `smoking_driking_dataset_Ver01.csv`, was read into a pandas DataFrame. 
+   - Code Snippet: 
+     ```python
+     df = pd.read_csv('smoking_driking_dataset_Ver01.csv')
+     df.head(5)
+     ```
+   - Output: ![Data Head](https://i.imgur.com/lmeMUHa.png)
+
+2. **Checking Dimensions**: The dimensions of the dataset were inspected to understand its size.
+   - Code Snippet:
+     ```python
+     df.shape
+     ```
+   - Output: ![Data Shape](https://i.imgur.com/wFAoM5w.png)
+
+3. **Handling Missing Values**: Checked for and processed any missing values in the dataset.
+   - Code Snippet:
+     ```python
+     df.isna().sum()
+     ```
+   - Output: ![Missing Values](https://i.imgur.com/SRuPQpe.png)
+
+4. **Column Inspection**: Examined the dataset's columns to understand the data types and structure.
+   - Code Snippet:
+     ```python
+     df.info()
+     ```
+   - Output: ![Column Info](https://i.imgur.com/hyFIFpu.png)
+
+5. **Dropping Unnecessary Columns**: Removed the 'SMK_stat_type_cd' column as it was not relevant to our analysis.
+   - Code Snippet:
+     ```python
+     df.drop(columns=['SMK_stat_type_cd'], inplace=True)
+     ```
+
+6. **Binary Encoding**: Converted categorical columns like 'sex' and 'DRK_YN' to binary values for analysis.
+   - Code Snippet:
+     ```python
+     df['sex'] = (df['sex'] == 'Male').astype(int)
+     df['DRK_YN'] = (df['DRK_YN'] == 'Y').astype(int)
+     df.head(5)
+     ```
+   - Output: ![Binary Encoding](https://i.imgur.com/8kMjR7I.png)
+
+7. **Separating Features and Target Variable**: Isolated the target variable 'DRK_YN' from the feature set.
+   - Code Snippet:
+     ```python
+     y = df['DRK_YN']
+     x = df.drop('DRK_YN', axis=1)
+     x.head(10)
+     ```
+   - Output: ![Features and Target](https://i.imgur.com/g72J55m.png)
+
+### Raw Data Availability
+- The “raw” data, prior to preprocessing, has been preserved to support future analysis and use cases.
+- Access Link: [Raw Dataset Link](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset)
+
+### Availability of Preprocessing Software
+- The preprocessing was conducted using standard Python libraries (`numpy`, `pandas`, `seaborn`, `sklearn`, `matplotlib`).
+- These libraries are widely available and can be installed via pip.
+
+### Additional Comments
+- The preprocessing steps were tailored to ensure the dataset is suitable for binary classification analysis.
+- The focus was on simplifying the dataset and transforming categorical variables into a format conducive for machine learning algorithms.
+
 
 ## Exploratory Data Analysis 
 
