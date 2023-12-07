@@ -80,13 +80,8 @@ Our dataset is called Smoking and Drinking Dataset with Body Signals. It provide
 We are using a benchmark to compare our score with. A basic XGBoost model was able to get an accuracy score of 74%. We plan to build off of this benchmark and add features to get a higher score.
 We will not be collecting data.
 
-### Data Processing
 
-Here's an example of how you could document the data processing steps you've described, using Markdown. This format includes placeholders for images of the code/output, which you can replace with actual images or links to images as needed.
-
----
-
-## Data Preprocessing Documentation
+## Data Preprocessing
 
 ### Preprocessing/Cleaning/Labeling of Data
 The dataset underwent several preprocessing steps to prepare it for analysis. These steps include:
@@ -159,73 +154,127 @@ The dataset underwent several preprocessing steps to prepare it for analysis. Th
 
 ## Exploratory Data Analysis 
 
-<Complete for **Project Progress**>
-* What EDA graphs you are planning to use?
-Histograms to view dataset distribution.
-Pair plot to visualize relationships between features.
-Correlation matrix heatmap to visualize strength of relationship between features.
 
-* Why? - We used pair plot and correlation to figure out what columns we might look at. When experimenting we didn't see a postive effect when trying to train using only certain rows.
-We may look to using a dimensionality reduction algorithm to improve results. Histograms allowed us to see the range of values for the age, sex, and drinker. 
-Making a histgram for the drinker column allowed us to see that we have a close number of Yes's and No's. Having too much of one prediction would skew results.
 
-<Expand and complete for the **Project Submission**>
-* Describe the methods you explored (usually algorithms, or data wrangling approaches). 
-  * Include images. 
-* Justify methods for feature normalization selection and the modeling approach you are planning to use. 
+### Planned EDA Graphs:
+- **Histogram for Age Distribution**: This graph will be used to understand the distribution and range of ages in the dataset, which is critical for assessing demographic factors.
+- **Correlation Heatmap**: A heatmap will be created to visually represent the correlation between different variables. This is essential for identifying potential predictors for the model.
+- **Pair Plot**: To explore pairwise relationships and distributions, a pair plot will be used. It's an effective way to spot trends, outliers, and patterns across multiple dimensions.
 
-## Data Preprocessing 
+**Rationale Behind Graph Selection:**
+- The histogram is a fundamental tool for examining the distribution of a single variable and can reveal skewness or outliers.
+- Correlation heatmaps are crucial in understanding the relationships between variables, highlighting potential dependencies or multicollinearity.
+- Pair plots provide a comprehensive overview of how each variable relates to others in a dataset, offering insights into complex interactions.
 
-<Complete for *Project Progress*>
-* Have you considered Dimensionality Reduction or Scaling? 
-  * If yes, include steps here.
-  We tried out minmax and it didn't improve the results immediately. We will try to normalize the data differently to get better results.  
-* What did you consider but *not* use? Why? 
-  We considered using a dimensionality reduction like PCA, but we want to try out scaling the data first and seeing the results. We plan on experimenting
-  with PCA or TSNE. 
 
-<Expand and complete for **Project Submission**>
+### Methods Explored and Justification:
+1. **Age Distribution Analysis**:
+   - The histogram of age was used to analyze the demographic distribution within the dataset. Understanding age distribution is vital for tailoring further analysis and models to the specific age groups present in the data.
+   - Image: ![Age Distribution Histogram](https://i.imgur.com/f8cHcL7.png)
+
+2. **Correlation Analysis**:
+   - A correlation heatmap was created to identify and visualize the strength and direction of relationships between the variables. This step is critical for feature selection and helps in avoiding features that are highly correlated with each other.
+   - Image: ![Correlation Heatmap](https://i.imgur.com/C6odaax.png)
+
+3. **Pair Plot**:
+   - The pair plot was used to inspect the pairwise relationships and distributions among the variables. It assists in identifying any specific trends or anomalies in the dataset and is useful for preliminary feature selection.
+   - Image: ![Pair Plot](https://i.imgur.com/PKYgrXo.png)
+
+### Feature Normalization Selection and Modeling Approach:
+- The choice of feature normalization and the modeling approach will be based on insights derived from these EDA methods. For instance, the distribution of variables as indicated by the histogram can guide the choice of normalization technique. Similarly, understanding correlations and relationships will influence the modeling approach, especially in terms of feature selection and engineering.
+
+## Dimensionality Reduction and Scaling
+
+- **Scaling**: Scaling was considered essential for normalizing the feature scales in the dataset. This step is critical to ensure that models that are sensitive to the scale of data, such as PCA, perform optimally.
+- **Dimensionality Reduction**: Dimensionality reduction, specifically using PCA (Principal Component Analysis), was planned to reduce the number of features while retaining the maximum variance in the data.
+
+**Considered but Not Used:**
+- **TSNE**: t-Distributed Stochastic Neighbor Embedding (t-SNE) was considered but not used. We determined that t-SNE, while excellent for visualization, is not as effective for our modeling purposes, as it is primarily designed for high-dimensional data visualization and not for improving model accuracy.
+- **Min-Max Scaling**: This technique was explored but ultimately not used. We found that Min-Max scaling adversely affected our model's accuracy in preliminary tests.
+
+
+### Implemented Methods:
+1. **Feature Scaling with StandardScaler**:
+   - Applied StandardScaler to normalize the features in our dataset. This step is crucial for models that assume normally distributed data.
+   - ![Standard Scaler Output](https://i.imgur.com/ynFC8yV.png)
+
+2. **PCA for Dimensionality Reduction**:
+   - PCA was used after scaling to reduce the dataset's dimensionality. We aimed to retain features that explain up to 95% of the variance in the dataset.
+   - The PCA cumulative variance plot helped determine the number of components needed.
+   - ![PCA Cumulative Variance Plot](https://i.imgur.com/2C0dJri.png)
+   - The optimal number of PCA components was calculated to effectively capture the significant variance in the data, determined to be `{n_components}` components.
+   - ![PCA Component Analysis](https://i.imgur.com/MLnbCCI.png)
+
+### Justification for Method Selection:
+- StandardScaler was chosen as it standardizes features by removing the mean and scaling to unit variance, which is particularly beneficial for PCA.
+- PCA was selected for its effectiveness in reducing dimensionality while preserving as much information as possible. The choice of 95% variance retention was a balance between complexity reduction and information retention.
+
 
 
 ## Machine Learning Approaches
 
-<Complete for **Project Progress**>
 
-* What is your baseline evaluation setup? Why? 
-Our baseline evaluation setup is currently checking the accuracy and using a confusion matrix. This will tell us how many false positives and false negeative we have, which will allow us to make changes
-to alleviate the error.
-* Describe the ML methods that you consider using and what is the reason for their choice?  
-We will try XGboost because our benchmark is using it. We will try out logistic regression because we are trying to predict something that is binary (Yes or No). We will also try out
-an SVM model to compete with the other two.
-We plan to compare the two models and try to get a better score than the becnhmark. 
-   * What is the family of machine learning algorithms you are using and why?
-   We are using models form the decision tree family because we beleive that certain feature decsions could lead to accurate prediction. We are using logistic regression whihc is a part of the linear
-   regression tree. logistic regression can be used for binary predictions. We will also try out a model from the SVM family, so we can compare the results to ther other models.
+### Baseline Evaluation Setup:
+- **Method**: Our baseline evaluation setup includes checking the model's accuracy and using a confusion matrix. This approach helps us understand the model's performance in terms of false positives and false negatives, which is crucial for improving prediction accuracy in a binary classification problem. Model accuracy also gives a direct number that we can use to easily determine if a model is performing well.
 
-<Expand and complete for **Project Submission**>
+![Confusion Matrix](https://i.imgur.com/x2kI3sO.png)
 
-* Describe the methods/datasets (you can have unscaled, selected, scaled version, multiple data farmes) that you ended up using for modeling. 
 
-* Justify the selection of machine learning tools you have used
-  * How they informed the next steps? 
-* Make sure to include at least twp models: (1) baseline model, and (2) improvement model(s).  
-   * The baseline model  is typically the simplest model that's applicable to that data problem, something we have learned in the class. 
-   * Improvement model(s) are available on Kaggle challenge site, and you can research github.com and papers with code for approaches.  
+### Considered Machine Learning Methods:
+- **XGBoost**: Selected to use as it's in our benchmark, known for its effectiveness in various classification tasks.
+- **Logistic Regression**: Chosen for its suitability in binary classification problems, which aligns with our objective of predicting a binary outcome.
+- **Random Forest**: Also under consideration as it falls under the decision tree family, believed to be effective in capturing feature-based decisions.
 
-## Experiments 
+**Family of Algorithms:**
+- **Decision Trees**: Decision tree models are being used because of their ability to make accurate predictions based on feature decisions.
+- **Logistic Regression**: Part of the linear regression family, it's particularly suited for binary predictions.
 
-< **Project Progress** should include experiments you have completed thus far.>
-* We tried XGBoost on the dataset when it was normalized and we tried to pick columns that had higher correlations. We were not able to get a score higher than our benchmark score 74% accuracy.
 
-<**Project Submission** should only contain final version of the experiments. Please use visualizations whenever possible.>
-* Describe how did you evaluate your solution 
-  * What evaluation metrics did you use? 
-* Describe a baseline model. 
-  * How much did your model outperform the baseline?  
-* Were there other models evaluated on the same dataset(s)? 
-  * How did your model do in comparison to theirs? 
-  * Show graphs/tables with results 
-  * Present error analysis and suggestions for future improvement. 
+### Methods and Datasets Used for Modeling:
+- We employed datasets in scaled, unscaled, and reduced forms to determine which one improves our model and by how much.
+- Multiple data frames were utilized to explore different aspects and combinations of the data.
+
+**Justification of Machine Learning Tool Selection:**
+- The chosen tools informed our next steps by highlighting areas of strength and weakness in our prediction capabilities, guiding adjustments and refinements in our models.
+- We incorporated feedback from each model's performance to iteratively improve our approach.
+
+### Model Comparison:
+1. **Baseline Model:**
+   - **Decision Tree**: Used as our baseline model, it represents the simplest applicable model for our data problem, providing a benchmark for comparison.
+2. **Improvement Models:**
+   - **XGBoost, Logistic Regression, Random Forest**: These models were selected for their potential to outperform the baseline model. They were tested both with and without the application of the Standard Scaler.
+   - The improvement models were inspired by approaches found on Kaggle, as well as what we learned in class.
+
+
+## Experiments
+
+
+### Experiments Conducted:
+- **XGBoost with Normalized Data**: Applied XGBoost to the dataset after normalization and selected columns with higher correlations. 
+- **PCA Dimensionality Reduction**: Attempted to use PCA in order to improve model performance and reduce overfitting.
+- **Hyperparameter Tuning**: Used Hyperparameter Tuning to improve our highest accuracy model by choosing parameter that best fit the dataset.
+- **Outcome**: The accuracy achieved was below our benchmark score, peaking at 73.40%. 
+
+
+### Evaluation of Solution:
+- **Primary Metric**: The primary evaluation metric used was the accuracy score.
+- **Additional Metric**: An AUC (Area Under the Curve) graph was utilized to evaluate model performance.
+  - ![AUC Graph](https://i.imgur.com/GIHZksV.png)
+
+**Baseline Model Comparison:**
+- **Model Performance**: Our model showed an improvement of approximately 2.2% over the baseline model.
+- **Baseline Model Details**: The baseline was a basic decision tree algorithm with default parameters.
+
+**Comparison with Other Models:**
+- **Benchmark Model**: The benchmark model, also using XGBoost, was evaluated on the same dataset.
+- **Performance Comparison**: Our model underperformed compared to the benchmark by about 0.6%.
+- **Result Visualization**:
+  - Benchmark model: ![Comparison Graph](https://i.imgur.com/3NnwnIM.png)
+  - Our Model: ![Our Graph](https://i.imgur.com/x2kI3sO.png)
+
+**Error Analysis and Future Improvement Suggestions:**
+- **Error Analysis**: Our model failed at all of our experiments when trying to outperform the benchmark. When we tried PCA, it just hurt out model. When we tried hyperparameter tuning, it had no effect. The only thing that helped us was using standard scaling but this is to be expected when working with unnormalized data in classification tasks.
+- **Improvement Suggestions**: We could improve our performance on learning this data by using different classification models we haven't tried, and by using more extensive hyperparameter tuning. The tuning we used in this project was very basic in order to save on computation time which is probably the reason it didn't improve anything. We could also explore alternative feature engineering techniques or additional data integration to help our model, but this is not guranteed as the dataset given is already very diverse and extensive.
 
 ## Conclusion
 <Complete for the **Project Submission**>
@@ -241,5 +290,3 @@ We plan to compare the two models and try to get a better score than the becnhma
 1. Python code with markdown documentation, images saved in .jpg or .png format, and README.md as a project report OR
 2. Jupyter notebook (.ipynb) that contains full markdown sections as listed above 
 
-## Now go back and write the summary at the top of the page
-# ML-Project
