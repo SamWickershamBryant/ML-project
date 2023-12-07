@@ -190,7 +190,7 @@ The dataset underwent several preprocessing steps to prepare it for analysis. Th
    - PCA was used after scaling to reduce the dataset's dimensionality. We aimed to retain features that explain up to 95% of the variance in the dataset.
    - The PCA cumulative variance plot helped determine the number of components needed.
    - ![PCA Cumulative Variance Plot](https://i.imgur.com/2C0dJri.png)
-   - The optimal number of PCA components was calculated to effectively capture the significant variance in the data, determined to be `{n_components}` components.
+   - The optimal number of PCA components was calculated to effectively capture the significant variance in the data, determined to be `17` components.
    - ![PCA Component Analysis](https://i.imgur.com/MLnbCCI.png)
 
 ### Justification for Method Selection:
