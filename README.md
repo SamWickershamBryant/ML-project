@@ -6,7 +6,7 @@
 
 ### Introduction
 
-Can we predict if someone is a drinker based on their body signals? In this project we will be using a kaggle data from [https://www.kaggle.com/code/raman209/prediction-of-drinkers-using-body-signals](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset) that contains almost a million instances collected from the National Health Insurance Service in Korea. It contains whether the person is a drinker or not, along with over 20 different body signals including age, sex, weight, height, and others. We will use this dataset to create an accurate model for predicting someone's drinking status based off the given body signals.
+Can we predict if someone is a drinker based on their body signals? In this project we will be using a kaggle data from [here](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset) that contains almost a million instances collected from the National Health Insurance Service in Korea. It contains whether the person is a drinker or not, along with over 20 different body signals including age, sex, weight, height, and others. We will use this dataset to create an accurate model for predicting someone's drinking status based off the given body signals.
 
 ### Machine Learning Concepts Used
 
