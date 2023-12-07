@@ -12,43 +12,45 @@
 # SUBMISSION FORMAT FOR THE REPORTS
 
 #  Determine if someone is a drinker based on bady signals
-**<Brian Robinson, Sam Bryant>** 
+**Brian Robinson, Sam Bryant** 
 
 ## Project Summary
 
-<Complete for *Project Proposal* assignment submission to give idea to the reader what youa re trying to do and how> 
-Based on a persons body signals it can be predicted if they are a drinker. This data can be used for alcohol companies to target certain groups.
-A person can be classified as a drinker based on information gathered from biometrics.
+### Introduction
 
-<Fully rewrite the summary as the last step for the *Project Submission* assignment: github.com repositories on how people shortblurb thre project. It is a standalone section. It is written to give the reader a summary of your work. Be sure to specific, yet brief.>
+Can we predict if someone is a drinker based on their body signals? In this project we will be using a kaggle data from [code]([https://www.kaggle.com/code/raman209/prediction-of-drinkers-using-body-signals](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset)) that contains almost a million instances collected from the National Health Insurance Service in Korea. It contains whether the person is a drinker or not, along with over 20 different body signals including age, sex, weight, height, and others. We will use this dataset to create an accurate model for predicting someone's drinking status based off the given body signals.
+
+### Machine Learing Concepts Used
+
+- **Correlation Matrix**: Simple chart for visualizing correlation between features.
+- **Cross Validation**: Statistical method used to estimate the skill of machine learning models by partitioning data into subsets, training the model on some subsets and testing it on the remaining ones, thereby helping to mitigate overfitting and providing a more accurate measure of a model's predictive performance.
+- **Decision Tree**: Model for making preditions by creating splits on features that can determine the result while being easy to comprehend
+- **XGBoost**: Efficient and scalable machine learning model for gradient boosting, known for its performance in classification, regression, and ranking tasks.
+- **Logistic Regression**: Statistical model used for binary classification that estimates the probability of a binary response based on one or more predictor variables.
+- **Random Forest**: Versatile and robust ensemble learning method that constructs multiple decision trees during training and outputs the class that is the mode of the classes of the individual trees.
+- **Principal Component Analysis (PCA)**: Dimensionality reduction technique that transforms data into a new coordinate system, reducing the number of variables while preserving as much variance as possible.
+- **Hyperparameter Tuning**: Systematically searching for the optimal set of hyperparameters that governs the learning process of a machine learning algorithm to enhance its performance on a given dataset.
 
 
 ## Problem Statement 
 
-<Add one sentence for the *Project Proposal* assignment submission that captures the project statement.>
-We, as a group, are going to use the dataset to train a model to predict if a person is a drinker or not.
+Can we, as a group outperform a benchmark model performance by using these machine learning techniques?
 
-<Expand the section with few sentences for the *Project Progress* assignment submission> 
-* Using Body Signals, can a model be created that can predict if a person used to be a drinker or not.
-* What is the benchmark you are using.  Why?
+
 We are using this code as our benchmark [code](https://www.kaggle.com/code/raman209/prediction-of-drinkers-using-body-signals) .
 This code is very basic and it uses the XGBoost model to acheive accuracy. We are using this as our benchmark because we want to see if we can add features
 to improve the accuracy. We will also try out other Machine learning models to reach a higher accuracy. 
-* Where does the data come from, what are its characteristics? Include informal success measures (e.g. accuracy on cross-validated data, without specifying ROC or precision/recall etc) that you planned to use. 
 The data comes from this [link](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset/data). The data was gathered in Korea from a National Health Insurance service. The dataset consists of body signals and if an indiviudal was a smoker or drinker. The DRK_YN (Our targte column) is either a Y or N. We decided to make that column binary (0 or 1). The rest of the dataset contains measurements collected for an individual. For example, an individual's height, weight, and age is recored. It also holds the value for their cholesterol and hemoglobin levels. We plan to use a form of cross validation on our data to reduce noise, bias, and variance. We can use this as an informal success measure.
-* What do you hope to achieve?
-Our goal is to acheive a higher accuracy score than our benchmark. We having already tried normalizing our data with minmax, but it only lowered our accuracy score.
-Using only specific columns with high correlation also resulted in an accuracy score lower than 74%.
 
-<Finalize for the *Project Submission* assignment submission> 
+### What we hope to achieve
+Our goal is to acheive a higher accuracy score than our benchmark. The accuracy score of 74% turned out to be difficult to beat but not too hard to get close to. If we are unable to beat this score, we can still learn and make conclusions base on the variable importance derived from the models we use.
+
 
 ## Dataset 
 
-<Add highlights on the dataset, specifically the size in instances and attributes for **Project Proposal**>
 [Dataset](https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset/data)
 Our dataset is called Smoking and Drinking Dataset with Body Signals. It provides data on an individual's body to predict if they are a drinker (Yes or No) or if they are a smoker(1: Never Smoked, 2: Used to Smoke, 3: Still Smokes). There are 991356 instances and 24 columns in our dataset. 
 
-<Complete the following for the **Project Progress**>
 * The dimensions of this dataset is 991346 X 24. There are 24 columns, including the target columns smoker and drinker. 
 * 1. Sex: Is an indivudal male or female (1 or 0).
 * 2. Age: What is the age of the individual.
@@ -75,9 +77,11 @@ Our dataset is called Smoking and Drinking Dataset with Body Signals. It provide
 * 23. SMK_stat_type_cd: Smoking state, 1(never), 2(used to smoke but quit), 3(still smoke).
 * 24. DRK_YN: Drinker or Not.
 
-* If you are using benchmarks, describe the data in details. If you are collecting data, describe why, how, data format, volume, labeling, etc.>
 We are using a benchmark to compare our score with. A basic XGBoost model was able to get an accuracy score of 74%. We plan to build off of this benchmark and add features to get a higher score.
 We will not be collecting data.
+
+### Data Processing
+
 
 <Expand and complete for *Project Submission*>
 
