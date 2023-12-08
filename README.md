@@ -265,13 +265,8 @@ The dataset underwent several preprocessing steps to prepare it for analysis. Th
 - **Improvement Suggestions**: We could improve our performance on learning this data by using different classification models we haven't tried, and by using more extensive hyperparameter tuning. The tuning we used in this project was very basic in order to save on computation time which is probably the reason it didn't improve anything. We could also explore alternative feature engineering techniques or additional data integration to help our model, but this is not guranteed as the dataset given is already very diverse and extensive.
 
 ## Conclusion
-<Complete for the **Project Submission**>
-* What did not work? 
-* What do you think why? 
-* What were approaches, tuning model parameters you have tried? 
-* What features worked well and what didn't? 
-* When describing methods that didn't work, make clear how they failed and any evaluation metrics you used to decide so. 
-* How was that a data-driven decision? Be consise, all details can be left in .ipynb
+
+PCA, correlation matrix, minmaxscaler did not work to improve our model. We saw no improvements from excluding data in any way. We beleive that these tools did not work because the data is already well balanced and diverse, so any loss of data or change to it is detrimental to the accuracy of the models. This is because every feature is used to determine the target coulumn and models like xgBoost can train effectively using boosting. We tried using grid search on our xgBoost model to tune the parameters. The best parameters found were only able to acheive a score of 72%, which was worse than xgBoost with default parameters. The new models, logistic regression, random forest, and xgBoost, improved our overall score. Training other models improved the accuracy score that we could acheive. Logisitic regression, random forest, and xgBoost were all able to get a better score than our baseline decision tree. In conclusion, we were not able to get an accuracy score over 74%. Despite not reaching our goal, we still were able to improve from our baseline and achieve better scores. 
 
  
 ## Submission Format
