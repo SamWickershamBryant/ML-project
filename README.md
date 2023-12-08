@@ -156,15 +156,19 @@ The dataset underwent several preprocessing steps to prepare it for analysis. Th
 
 
 ### Methods Explored and Justification:
-1. **Age Distribution Analysis**:
+1. **Drinker Distribution Analysis**:
+   - We used a drinker distribution histrogram to analyze our target variable. This information was important for understanding if we had to use any data engineering techniques to balance the data.
+   - Image: ![Drinker Distribution Histogram](https://i.imgur.com/TMV12QL.png)
+   
+2. **Age Distribution Analysis**:
    - The histogram of age was used to analyze the demographic distribution within the dataset. Understanding age distribution is vital for tailoring further analysis and models to the specific age groups present in the data.
    - Image: ![Age Distribution Histogram](https://i.imgur.com/f8cHcL7.png)
 
-2. **Correlation Analysis**:
+3. **Correlation Analysis**:
    - A correlation heatmap was created to identify and visualize the strength and direction of relationships between the variables. This step is critical for feature selection and helps in avoiding features that are highly correlated with each other.
    - Image: ![Correlation Heatmap](https://i.imgur.com/C6odaax.png)
 
-3. **Pair Plot**:
+4. **Pair Plot**:
    - The pair plot was used to inspect the pairwise relationships and distributions among the variables. It assists in identifying any specific trends or anomalies in the dataset and is useful for preliminary feature selection.
    - Image: ![Pair Plot](https://i.imgur.com/PKYgrXo.png)
 
